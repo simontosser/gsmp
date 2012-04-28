@@ -3,7 +3,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>fr.gsmp.plongee</groupId>
   <artifactId>nage.app</artifactId>
-  <version>0.9.0</version>
+  <version>0.9.1-SNAPSHOT</version>
 
 	<repositories>
 		<repository>
@@ -24,8 +24,8 @@
                 
         </repositories>
       <scm>
-        <connection>scm:svn:https://www.kornog-computing.com/svn/gsmp/tags/nage.app-0.9.0</connection>
-        <url>https://www.kornog-computing.com/svn/gsmp/tags/nage.app-0.9.0</url>
+        <connection>scm:svn:https://www.kornog-computing.com/svn/gsmp/trunk/nage.app/</connection>
+        <url>https://www.kornog-computing.com/svn/gsmp/trunk/nage.app/</url>
       </scm>
  <distributionManagement>
     <site>
