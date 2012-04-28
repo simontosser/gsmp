@@ -9,6 +9,7 @@ package fr.gsmp.plongee.nage.gui;
 import java.awt.event.ActionEvent;
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.InputStream;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
@@ -157,11 +158,13 @@ public class DisplayResultat extends javax.swing.JDialog {
 	}
 
 	private void loadResult() {
-		
+
 		Boolean compet = null;
-		if( sexeComboBox1.getSelectedItem()!=null &&  sexeComboBox1.getSelectedItem().equals("oui"))
-			compet =true;
-		else if( sexeComboBox1.getSelectedItem()!=null &&  sexeComboBox1.getSelectedItem().equals("non"))
+		if (sexeComboBox1.getSelectedItem() != null
+				&& sexeComboBox1.getSelectedItem().equals("oui"))
+			compet = true;
+		else if (sexeComboBox1.getSelectedItem() != null
+				&& sexeComboBox1.getSelectedItem().equals("non"))
 			compet = false;
 		listP = pm.getAllParticipantByParams(
 				(Course) courseComboBox.getSelectedItem(),
@@ -260,7 +263,6 @@ public class DisplayResultat extends javax.swing.JDialog {
 			}
 		});
 		loadComboBox();
-
 
 		javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(
 				jPanel1);
@@ -467,22 +469,42 @@ public class DisplayResultat extends javax.swing.JDialog {
 			private void excelButtonActionPerformed(ActionEvent evt) {
 				try {
 					final JRXlsExporter exporter = new JRXlsExporter();
-					
-					exporter.setParameter(JRXlsExporterParameter.IS_COLLAPSE_ROW_SPAN, Boolean.TRUE);
-					exporter.setParameter(JRXlsExporterParameter.IS_REMOVE_EMPTY_SPACE_BETWEEN_COLUMNS, Boolean.TRUE);
-					exporter.setParameter(JRXlsExporterParameter.IS_REMOVE_EMPTY_SPACE_BETWEEN_ROWS, Boolean.TRUE);
-					exporter.setParameter(JRXlsExporterParameter.IS_ONE_PAGE_PER_SHEET, Boolean.FALSE);
-					exporter.setParameter(JRXlsExporterParameter.IS_DETECT_CELL_TYPE, Boolean.FALSE);
-					exporter.setParameter(JRXlsExporterParameter.IS_WHITE_PAGE_BACKGROUND, Boolean.FALSE);
-					exporter.setParameter(JRXlsExporterParameter.IS_IGNORE_GRAPHICS, Boolean.TRUE);
-					
-					
+
+					exporter.setParameter(
+							JRXlsExporterParameter.IS_COLLAPSE_ROW_SPAN,
+							Boolean.TRUE);
+					exporter.setParameter(
+							JRXlsExporterParameter.IS_REMOVE_EMPTY_SPACE_BETWEEN_COLUMNS,
+							Boolean.TRUE);
+					exporter.setParameter(
+							JRXlsExporterParameter.IS_REMOVE_EMPTY_SPACE_BETWEEN_ROWS,
+							Boolean.TRUE);
+					exporter.setParameter(
+							JRXlsExporterParameter.IS_ONE_PAGE_PER_SHEET,
+							Boolean.FALSE);
+					exporter.setParameter(
+							JRXlsExporterParameter.IS_DETECT_CELL_TYPE,
+							Boolean.FALSE);
+					exporter.setParameter(
+							JRXlsExporterParameter.IS_WHITE_PAGE_BACKGROUND,
+							Boolean.FALSE);
+					exporter.setParameter(
+							JRXlsExporterParameter.IS_IGNORE_GRAPHICS,
+							Boolean.TRUE);
+
 					String templateFile = "result.jrxml";
 					String jasperFile = "result.jasper";
-					JasperCompileManager.compileReportToFile(templateFile,
-							jasperFile);
-					FileInputStream inputStream = new FileInputStream(
-							"result.jasper");
+
+					if ((new File(templateFile)).exists())
+						JasperCompileManager.compileReportToFile(templateFile,
+								jasperFile);
+
+					InputStream inputStream;
+					if ((new File(jasperFile)).exists()) {
+						inputStream = new FileInputStream(jasperFile);
+					} else
+						inputStream = getClass().getResourceAsStream(
+								"/"+jasperFile);
 					final SimpleDateFormat sdf = new SimpleDateFormat(
 							"yyyyMMdd-HHmm");
 					final String suffix = sdf.format(new Date());
@@ -494,17 +516,17 @@ public class DisplayResultat extends javax.swing.JDialog {
 						params.put("equipement", equipementComboBox
 								.getSelectedItem().toString());
 					else
-						params.put("equipement","");
+						params.put("equipement", "");
 					if (sexeComboBox.getSelectedItem() != null)
 						params.put("sexe", sexeComboBox.getSelectedItem()
 								.toString());
 					else
-						params.put("sexe","");
+						params.put("sexe", "");
 					if (categorieComboBox.getSelectedItem() != null)
 						params.put("categorie", categorieComboBox
 								.getSelectedItem().toString());
 					else
-						params.put("categorie","");
+						params.put("categorie", "");
 					final ArrayList jasperPrintList = new ArrayList();
 					jasperPrintList.add(JasperFillManager.fillReport(
 							inputStream, params,
@@ -535,10 +557,17 @@ public class DisplayResultat extends javax.swing.JDialog {
 					final JRPdfExporter exporter = new JRPdfExporter();
 					String templateFile = "result.jrxml";
 					String jasperFile = "result.jasper";
-					JasperCompileManager.compileReportToFile(templateFile,
-							jasperFile);
-					FileInputStream inputStream = new FileInputStream(
-							"result.jasper");
+
+					if ((new File(templateFile)).exists())
+						JasperCompileManager.compileReportToFile(templateFile,
+								jasperFile);
+
+					InputStream inputStream;
+					if ((new File(jasperFile)).exists()) {
+						inputStream = new FileInputStream(jasperFile);
+					} else
+						inputStream = getClass().getResourceAsStream(
+								"/"+jasperFile);
 					final SimpleDateFormat sdf = new SimpleDateFormat(
 							"yyyyMMdd-HHmm");
 					final String suffix = sdf.format(new Date());
@@ -550,17 +579,17 @@ public class DisplayResultat extends javax.swing.JDialog {
 						params.put("equipement", equipementComboBox
 								.getSelectedItem().toString());
 					else
-						params.put("equipement","");
+						params.put("equipement", "");
 					if (sexeComboBox.getSelectedItem() != null)
 						params.put("sexe", sexeComboBox.getSelectedItem()
 								.toString());
 					else
-						params.put("sexe","");
+						params.put("sexe", "");
 					if (categorieComboBox.getSelectedItem() != null)
 						params.put("categorie", categorieComboBox
 								.getSelectedItem().toString());
 					else
-						params.put("categorie","");
+						params.put("categorie", "");
 					final ArrayList jasperPrintList = new ArrayList();
 					jasperPrintList.add(JasperFillManager.fillReport(
 							inputStream, params,
@@ -573,7 +602,6 @@ public class DisplayResultat extends javax.swing.JDialog {
 					exporter.exportReport();
 
 					java.awt.Desktop.getDesktop().open(out);
-					
 
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -586,9 +614,6 @@ public class DisplayResultat extends javax.swing.JDialog {
 		pack();
 	}// </editor-fold>
 		// GEN-END:initComponents
-	
-	
-	
 
 	private void sexeComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {
 		this.loadResult();
