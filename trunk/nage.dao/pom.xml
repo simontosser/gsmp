@@ -1,10 +1,55 @@
 <?xml version="1.0"?>
-<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0"
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <groupId>fr.gsmp.plongee</groupId>
   <artifactId>nage.dao</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
+  <version>0.9.0</version>
+
+	<repositories>
+		<repository>
+			<id>kornog-repository</id>
+			<name>kornog Maven2 Repository</name>
+			<url>http://maven.kornog-computing.com/maven2/</url>
+		</repository>
+		<repository>
+			<id>kornog-release</id>
+			<name>kornog Maven2 Repository</name>
+			<url>http://maven.kornog-computing.com/release/</url>
+		</repository>
+		<repository>
+			<id>kornog-snapshot</id>
+			<name>kornog Maven2 Repository</name>
+			<url>http://maven.kornog-computing.com/snapshot</url>
+		</repository>
+                
+        </repositories>
+
+      <scm>
+        <connection>scm:svn:https://www.kornog-computing.com/svn/gsmp/tags/nage.dao-0.9.0</connection>
+        <url>https://www.kornog-computing.com/svn/gsmp/tags/nage.dao-0.9.0</url>
+      </scm>
+
+ <distributionManagement>
+    <site>
+    <id>kornogsite</id>
+    <name>kornog site</name>
+    <url>scp://maven.kornog-computing.com:/home/kornog-computing/domains/maven/public_html/site/thorium-file/</url>
+    </site>
+	  <!-- use the following if you're not using a snapshot version. -->
+	  <repository>
+	    <id>kornog</id>
+	    <name>kornog release</name>
+	    <url>scp://maven.kornog-computing.com:/home/kornog-computing/domains/maven/public_html/release/</url>
+	  </repository>
+	  <!-- use the following if you ARE using a snapshot version. -->
+	  <snapshotRepository>
+	    <id>kornogsnaphost</id>
+	    <name>kornog snapshot</name>
+	    <url>scp://maven.kornog-computing.com:/home/kornog-computing/domains/maven/public_html/snapshot/</url>
+	  </snapshotRepository>
+	</distributionManagement>
+
+
   <dependencies>
     <dependency>
       <groupId>org.springframework</groupId>
