@@ -5,6 +5,49 @@
   <groupId>fr.gsmp.plongee</groupId>
   <artifactId>nage.app</artifactId>
   <version>0.0.1-SNAPSHOT</version>
+
+	<repositories>
+		<repository>
+			<id>kornog-repository</id>
+			<name>kornog Maven2 Repository</name>
+			<url>http://maven.kornog-computing.com/maven2/</url>
+		</repository>
+		<repository>
+			<id>kornog-release</id>
+			<name>kornog Maven2 Repository</name>
+			<url>http://maven.kornog-computing.com/release/</url>
+		</repository>
+		<repository>
+			<id>kornog-snapshot</id>
+			<name>kornog Maven2 Repository</name>
+			<url>http://maven.kornog-computing.com/snapshot</url>
+		</repository>
+                
+        </repositories>
+      <scm>
+        <connection>scm:svn:https://www.kornog-computing.com/svn/gsmp/trunk/nage.app/</connection>
+        <url>https://www.kornog-computing.com/svn/gsmp/trunk/nage.app/</url>
+      </scm>
+ <distributionManagement>
+    <site>
+    <id>kornogsite</id>
+    <name>kornog site</name>
+    <url>scp://maven.kornog-computing.com:/home/kornog-computing/domains/maven/public_html/site/thorium-file/</url>
+    </site>
+	  <!-- use the following if you're not using a snapshot version. -->
+	  <repository>
+	    <id>kornog</id>
+	    <name>kornog release</name>
+	    <url>scp://maven.kornog-computing.com:/home/kornog-computing/domains/maven/public_html/release/</url>
+	  </repository>
+	  <!-- use the following if you ARE using a snapshot version. -->
+	  <snapshotRepository>
+	    <id>kornogsnaphost</id>
+	    <name>kornog snapshot</name>
+	    <url>scp://maven.kornog-computing.com:/home/kornog-computing/domains/maven/public_html/snapshot/</url>
+	  </snapshotRepository>
+	</distributionManagement>
+
   <dependencies>
     <dependency>
       <groupId>org.jdesktop</groupId>
@@ -19,7 +62,7 @@
     <dependency>
       <groupId>fr.gsmp.plongee</groupId>
       <artifactId>nage.services</artifactId>
-      <version>0.0.1-SNAPSHOT</version>
+      <version>0.9.0</version>
     </dependency>
     <dependency>
       <groupId>org.springframework</groupId>
