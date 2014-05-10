@@ -3,7 +3,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>fr.gsmp.plongee</groupId>
   <artifactId>nage.services</artifactId>
-  <version>0.9.1-SNAPSHOT</version>
+  <version>0.9.1</version>
   <dependencies>
     <dependency>
       <groupId>org.springframework</groupId>
@@ -43,7 +43,7 @@
     <dependency>
     	<groupId>fr.gsmp.plongee</groupId>
     	<artifactId>nage.dao</artifactId>
-    	<version>0.9.1-SNAPSHOT</version>
+    	<version>0.9.1</version>
     </dependency>
     <dependency>
     	<groupId>junit</groupId>
@@ -72,8 +72,8 @@
         </repositories>
 
       <scm>
-        <connection>scm:svn:https://www.kornog-computing.com/svn/gsmp/trunk/nage.services/</connection>
-        <url>https://www.kornog-computing.com/svn/gsmp/trunk/nage.services/</url>
+        <connection>scm:svn:https://www.kornog-computing.com/svn/gsmp/tags/nage.services-0.9.1</connection>
+        <url>https://www.kornog-computing.com/svn/gsmp/tags/nage.services-0.9.1</url>
       </scm>
  <distributionManagement>
     <site>
