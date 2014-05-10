@@ -215,7 +215,7 @@ public class DisplayResultat extends javax.swing.JDialog {
 		excelButton.setText("Export Excel");
 
 		setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-		getContentPane().setLayout(new java.awt.GridLayout(5, 0));
+		getContentPane().setLayout(new java.awt.GridLayout(3, 0));
 
 		courseLabel.setText("Course :");
 
@@ -271,7 +271,7 @@ public class DisplayResultat extends javax.swing.JDialog {
 				.setHorizontalGroup(jPanel1Layout
 						.createParallelGroup(
 								javax.swing.GroupLayout.Alignment.LEADING)
-						.addGap(0, 400, Short.MAX_VALUE)
+						.addGap(0, 200, Short.MAX_VALUE)
 						.addGroup(
 								jPanel1Layout
 										.createParallelGroup(
@@ -359,7 +359,7 @@ public class DisplayResultat extends javax.swing.JDialog {
 				.setVerticalGroup(jPanel1Layout
 						.createParallelGroup(
 								javax.swing.GroupLayout.Alignment.LEADING)
-						.addGap(0, 306, Short.MAX_VALUE)
+						.addGap(0, 250, Short.MAX_VALUE)
 						.addGroup(
 								jPanel1Layout
 										.createParallelGroup(
@@ -456,8 +456,10 @@ public class DisplayResultat extends javax.swing.JDialog {
 						{ null, null, null, null } }, new String[] { "Title 1",
 						"Title 2", "Title 3", "Title 4" }));
 		jScrollPane1.setViewportView(tableau);
-
+		jScrollPane1.setSize(200, 200);
 		getContentPane().add(jScrollPane1);
+		excelButton.setSize(200, 30);
+		pdfButton.setSize(200, 30);
 		getContentPane().add(excelButton);
 		getContentPane().add(pdfButton);
 
@@ -509,7 +511,7 @@ public class DisplayResultat extends javax.swing.JDialog {
 							"yyyyMMdd-HHmm");
 					final String suffix = sdf.format(new Date());
 					final File out = new File("resultat-" + suffix + ".xls");
-					final HashMap params = new HashMap();
+					final HashMap<String, Object> params = new HashMap<String, Object>();
 					params.put("course", courseComboBox.getSelectedItem()
 							.toString());
 					if (equipementComboBox.getSelectedItem() != null)
