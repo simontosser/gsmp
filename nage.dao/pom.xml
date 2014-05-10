@@ -3,7 +3,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>fr.gsmp.plongee</groupId>
   <artifactId>nage.dao</artifactId>
-  <version>0.9.1-SNAPSHOT</version>
+  <version>0.9.1</version>
 
 	<repositories>
 		<repository>
@@ -25,8 +25,8 @@
         </repositories>
 
       <scm>
-        <connection>scm:svn:https://www.kornog-computing.com/svn/gsmp/trunk/nage.dao/</connection>
-        <url>https://www.kornog-computing.com/svn/gsmp/trunk/nage.dao/</url>
+        <connection>scm:svn:https://www.kornog-computing.com/svn/gsmp/tags/nage.dao-0.9.1</connection>
+        <url>https://www.kornog-computing.com/svn/gsmp/tags/nage.dao-0.9.1</url>
       </scm>
 
  <distributionManagement>
