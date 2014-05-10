@@ -157,8 +157,7 @@ public class ParticipantForm extends javax.swing.JDialog {
 		tubaTextfield = new javax.swing.JFormattedTextField();
 		saveButton = new JButton();
 		deleteButton = new JButton();
-		
-		
+
 		competLabel.setText("Compétition");
 		competComboBox.setModel(new javax.swing.DefaultComboBoxModel(
 				new String[] { "oui", "non" }));
@@ -170,9 +169,9 @@ public class ParticipantForm extends javax.swing.JDialog {
 		nomLabel.setText("Nom :");
 		getContentPane().add(nomLabel);
 
-		sexeCombox.setModel(new javax.swing.DefaultComboBoxModel(
-				new String[] { "Homme", "Femme" }));
-		
+		sexeCombox.setModel(new javax.swing.DefaultComboBoxModel(new String[] {
+				"Homme", "Femme" }));
+
 		getContentPane().add(nomTextField);
 
 		prenomLabel.setText("Pr\u00e9nom :");
@@ -369,10 +368,12 @@ public class ParticipantForm extends javax.swing.JDialog {
 		getCourseComboBox().setSelectedItem(participant.getCourse());
 		categorieComboBox.setSelectedItem(participant.getCategorie());
 		enapTextFiled.setText(participant.getEnapNumber());
-		tubaTextfield.setText(participant.getTubaNumber().toString());
+		if (participant.getTubaNumber() != null) {
+			tubaTextfield.setText("" + participant.getTubaNumber());
+		}
 		sexeCombox.setSelectedItem(participant.getSexe());
-		
-		if(participant.getParticipantcompet())
+
+		if (participant.getParticipantcompet())
 			competComboBox.setSelectedItem("oui");
 		else
 			competComboBox.setSelectedItem("non");
@@ -395,18 +396,17 @@ public class ParticipantForm extends javax.swing.JDialog {
 				.getSelectedItem());
 		participant.setCategorieage((Categorieage) categorieAgeComboBox
 				.getSelectedItem());
-		try{
-		participant.setTubaNumber(new Integer(tubaTextfield.getText()));
-		}catch(Exception e){
-			
+		try {
+			participant.setTubaNumber(new Integer(tubaTextfield.getText()));
+		} catch (Exception e) {
+
 		}
 		participant.setParticipantdatenaissance((Date) datePicker.getValue());
 		participant.setSexe(sexeCombox.getSelectedItem().toString());
-		if(competComboBox.getSelectedItem().toString().equalsIgnoreCase("oui"))
+		if (competComboBox.getSelectedItem().toString().equalsIgnoreCase("oui"))
 			participant.setParticipantcompet(true);
 		else
 			participant.setParticipantcompet(false);
-			
 
 	}
 

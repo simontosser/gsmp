@@ -176,6 +176,7 @@ public class GsmpNage extends javax.swing.JFrame {
 
 	private void voirMenuItemActionPerformed(java.awt.event.ActionEvent evt) {
 		DisplayResultat dr = new DisplayResultat(this, true);
+		dr.setSize(1000,550);
 		dr.setVisible(true);
 	}
 
