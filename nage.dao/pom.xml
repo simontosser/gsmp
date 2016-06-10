@@ -29,24 +29,16 @@
         <url>https://www.kornog-computing.com/svn/gsmp/trunk/nage.dao/</url>
       </scm>
 
- <distributionManagement>
-    <site>
-    <id>kornogsite</id>
-    <name>kornog site</name>
-    <url>scp://maven.kornog-computing.com:/home/kornog-computing/domains/maven/public_html/site/thorium-file/</url>
-    </site>
-	  <!-- use the following if you're not using a snapshot version. -->
-	  <repository>
-	    <id>kornog</id>
-	    <name>kornog release</name>
-	    <url>scp://maven.kornog-computing.com:/home/kornog-computing/domains/maven/public_html/release/</url>
-	  </repository>
-	  <!-- use the following if you ARE using a snapshot version. -->
-	  <snapshotRepository>
-	    <id>kornogsnaphost</id>
-	    <name>kornog snapshot</name>
-	    <url>scp://maven.kornog-computing.com:/home/kornog-computing/domains/maven/public_html/snapshot/</url>
-	  </snapshotRepository>
+	<distributionManagement>
+
+		<repository>
+			<id>releases</id>
+			<url>http://nexus.kornog-computing.com/nexus/content/repositories/releases</url>
+		</repository>
+		<snapshotRepository>
+			<id>snapshots</id>
+			<url>http://nexus.kornog-computing.com/nexus/content/repositories/snapshots</url>
+		</snapshotRepository>
 	</distributionManagement>
 
 
@@ -282,12 +274,13 @@
     	<version>3.1.1.RELEASE</version>
     </dependency>
 
-    <dependency>
-    	<groupId>mysql</groupId>
-    	<artifactId>mysql-connector-java</artifactId>
-    	<version>5.1.18</version>
-    </dependency>
+ <dependency>
+    <groupId>com.h2database</groupId>
+    <artifactId>h2</artifactId>
+    <version>1.4.192</version>
+</dependency>
   </dependencies>
+  
   <build>
     <plugins>
       <plugin>
