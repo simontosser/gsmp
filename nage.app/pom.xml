@@ -27,24 +27,16 @@
         <connection>scm:svn:https://www.kornog-computing.com/svn/gsmp/trunk/nage.app/</connection>
         <url>https://www.kornog-computing.com/svn/gsmp/trunk/nage.app/</url>
       </scm>
- <distributionManagement>
-    <site>
-    <id>kornogsite</id>
-    <name>kornog site</name>
-    <url>scp://maven.kornog-computing.com:/home/kornog-computing/domains/maven/public_html/site/thorium-file/</url>
-    </site>
-	  <!-- use the following if you're not using a snapshot version. -->
-	  <repository>
-	    <id>kornog</id>
-	    <name>kornog release</name>
-	    <url>scp://maven.kornog-computing.com:/home/kornog-computing/domains/maven/public_html/release/</url>
-	  </repository>
-	  <!-- use the following if you ARE using a snapshot version. -->
-	  <snapshotRepository>
-	    <id>kornogsnaphost</id>
-	    <name>kornog snapshot</name>
-	    <url>scp://maven.kornog-computing.com:/home/kornog-computing/domains/maven/public_html/snapshot/</url>
-	  </snapshotRepository>
+	<distributionManagement>
+
+		<repository>
+			<id>releases</id>
+			<url>http://nexus.kornog-computing.com/nexus/content/repositories/releases</url>
+		</repository>
+		<snapshotRepository>
+			<id>snapshots</id>
+			<url>http://nexus.kornog-computing.com/nexus/content/repositories/snapshots</url>
+		</snapshotRepository>
 	</distributionManagement>
 
   <dependencies>
@@ -108,6 +100,11 @@
     	<artifactId>jasperreports</artifactId>
     	<version>4.0.0</version>
     </dependency>-->
+    
+    <!-- http://mvnrepository.com/artifact/com.h2database/h2 -->
+
+    
+    
     <dependency>
     <groupId>net.sf.jasperreports</groupId>
 	<artifactId>jasperreports</artifactId>
