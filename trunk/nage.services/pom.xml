@@ -51,48 +51,21 @@
     	<version>4.10</version>
     </dependency>
   </dependencies>
+  <scm>
+       <connection>scm:svn:https://www.kornog-computing.com/svn/gsmp/trunk/nage.services/</connection>
+       <url>https://www.kornog-computing.com/svn/gsmp/trunk/nage.services/</url>
+  </scm>
 
-	<repositories>
-		<repository>
-			<id>kornog-repository</id>
-			<name>kornog Maven2 Repository</name>
-			<url>http://maven.kornog-computing.com/maven2/</url>
-		</repository>
-		<repository>
-			<id>kornog-release</id>
-			<name>kornog Maven2 Repository</name>
-			<url>http://maven.kornog-computing.com/release/</url>
-		</repository>
-		<repository>
-			<id>kornog-snapshot</id>
-			<name>kornog Maven2 Repository</name>
-			<url>http://maven.kornog-computing.com/snapshot</url>
-		</repository>
-                
-        </repositories>
+	<distributionManagement>
 
-      <scm>
-        <connection>scm:svn:https://www.kornog-computing.com/svn/gsmp/trunk/nage.services/</connection>
-        <url>https://www.kornog-computing.com/svn/gsmp/trunk/nage.services/</url>
-      </scm>
- <distributionManagement>
-    <site>
-    <id>kornogsite</id>
-    <name>kornog site</name>
-    <url>scp://maven.kornog-computing.com:/home/kornog-computing/domains/maven/public_html/site/thorium-file/</url>
-    </site>
-	  <!-- use the following if you're not using a snapshot version. -->
-	  <repository>
-	    <id>kornog</id>
-	    <name>kornog release</name>
-	    <url>scp://maven.kornog-computing.com:/home/kornog-computing/domains/maven/public_html/release/</url>
-	  </repository>
-	  <!-- use the following if you ARE using a snapshot version. -->
-	  <snapshotRepository>
-	    <id>kornogsnaphost</id>
-	    <name>kornog snapshot</name>
-	    <url>scp://maven.kornog-computing.com:/home/kornog-computing/domains/maven/public_html/snapshot/</url>
-	  </snapshotRepository>
+		<repository>
+			<id>releases</id>
+			<url>http://nexus.kornog-computing.com/nexus/content/repositories/releases</url>
+		</repository>
+		<snapshotRepository>
+			<id>snapshots</id>
+			<url>http://nexus.kornog-computing.com/nexus/content/repositories/snapshots</url>
+		</snapshotRepository>
 	</distributionManagement>
 
   <build>
