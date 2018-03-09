@@ -3,23 +3,22 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>fr.gsmp.plongee</groupId>
   <artifactId>nage.services</artifactId>
-  <version>0.9.2-SNAPSHOT</version>
   <dependencies>
     <dependency>
       <groupId>org.springframework</groupId>
       <artifactId>spring-core</artifactId>
-      <version>3.1.1.RELEASE</version>
+			<version>${version.frk.spring}</version>
     </dependency>
     <dependency>
       <groupId>org.springframework</groupId>
       <artifactId>spring-beans</artifactId>
-      <version>3.1.1.RELEASE</version>
+			<version>${version.frk.spring}</version>
     </dependency>
-    <dependency>
+    <!-- <dependency>
       <groupId>org.springframework</groupId>
       <artifactId>spring-asm</artifactId>
-      <version>3.1.1.RELEASE</version>
-    </dependency>
+			<version>${version.frk.spring}</version>
+    </dependency>-->
     <dependency>
       <groupId>commons-logging</groupId>
       <artifactId>commons-logging</artifactId>
@@ -33,12 +32,12 @@
     <dependency>
       <groupId>org.springframework</groupId>
       <artifactId>spring-context</artifactId>
-      <version>3.1.1.RELEASE</version>
+			<version>${version.frk.spring}</version>
     </dependency>
     <dependency>
       <groupId>org.springframework</groupId>
       <artifactId>spring-expression</artifactId>
-      <version>3.1.1.RELEASE</version>
+			<version>${version.frk.spring}</version>
     </dependency>
     <dependency>
     	<groupId>fr.gsmp.plongee</groupId>
@@ -73,11 +72,16 @@
       <plugin>
         <artifactId>maven-compiler-plugin</artifactId>
         <configuration>
-          <source>1.6</source>
-          <target>1.6</target>
+          <source>1.8</source>
+          <target>1.8</target>
         </configuration>
       </plugin>
      		
     </plugins>
   </build>
+  <parent>
+  <groupId>fr.gsmp.plongee</groupId>
+  <artifactId>nage</artifactId>
+  <version>0.9.2-SNAPSHOT</version> 
+  </parent>
 </project>
