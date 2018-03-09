@@ -11,7 +11,7 @@
 		org.hibernate.dialect.HSQLDialect
 	</property>
 	<property name="connection.url">
-		jdbc:h2:./gsmpnage
+		jdbc:h2:./data/gsmpnage
 	</property>
 	<property name="show_sql">true</property>
 	<property name="connection.username">sa</property>
