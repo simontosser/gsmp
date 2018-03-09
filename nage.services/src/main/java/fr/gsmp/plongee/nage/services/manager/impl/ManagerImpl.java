@@ -5,7 +5,7 @@ package fr.gsmp.plongee.nage.services.manager.impl;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
-import org.springframework.orm.hibernate3.SessionFactoryUtils;
+import org.springframework.orm.hibernate4.SessionFactoryUtils;
 
 /**
  * @author simon
@@ -28,8 +28,9 @@ public class ManagerImpl {
 	 */
 	public void setSessionFactory(SessionFactory sessionFactory) {
 		this.sessionFactory = sessionFactory;
-		session = SessionFactoryUtils.getSession(
-				(SessionFactory) sessionFactory, true);
+		session = sessionFactory.openSession();
+		/*session = SessionFactoryUtils.getSession(
+				(SessionFactory) sessionFactory, true);*/
 
 	}
 }

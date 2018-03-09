@@ -25,7 +25,7 @@
 	</distributionManagement>
 
   <properties>
-  		<version.frk.hibernate>4.3.0.Final</version.frk.hibernate>
+  		<version.frk.hibernate>4.3.2.Final</version.frk.hibernate>
 		<version.frk.spring>4.3.14.RELEASE</version.frk.spring>
 
   </properties>

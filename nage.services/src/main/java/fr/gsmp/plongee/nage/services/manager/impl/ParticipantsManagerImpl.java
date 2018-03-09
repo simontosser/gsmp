@@ -7,11 +7,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.hibernate.Criteria;
-import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.hibernate.criterion.Order;
 import org.hibernate.criterion.Restrictions;
-import org.springframework.orm.hibernate3.SessionFactoryUtils;
 
 import fr.gsmp.plongee.nage.dao.data.Categorie;
 import fr.gsmp.plongee.nage.dao.data.Categorieage;
@@ -71,8 +69,7 @@ public class ParticipantsManagerImpl extends ManagerImpl implements
 	 */
 	@Override
 	public List<Participants> getAllParticipants() {
-		session = SessionFactoryUtils.getSession(
-				(SessionFactory) sessionFactory, true);
+
 		Criteria criteria = session.createCriteria(Participants.class);
 		List<Participants> list = new ArrayList<Participants>();
 		List<Participants> l = criteria.list();
