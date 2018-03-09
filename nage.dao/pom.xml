@@ -81,32 +81,32 @@
     <dependency>
       <groupId>org.springframework</groupId>
       <artifactId>spring-instrument</artifactId>
-      <version>3.1.1.RELEASE</version>
+      <version>${version.frk.spring}</version>
     </dependency>
     <dependency>
       <groupId>org.springframework</groupId>
       <artifactId>spring-instrument-tomcat</artifactId>
 			<version>${version.frk.spring}</version>
     </dependency>
-    <dependency>
+   <!--  <dependency>
       <groupId>org.hibernate</groupId>
       <artifactId>hibernate-annotations</artifactId>
-      <version>3.5.6-Final</version>
+      <version>${version.frk.hibernate}</version>
     </dependency>
     <dependency>
       <groupId>org.hibernate</groupId>
       <artifactId>hibernate-commons-annotations</artifactId>
-      <version>3.3.0.ga</version>
-    </dependency>
+      <version>${version.frk.spring}</version>
+    </dependency>-->
     <dependency>
       <groupId>org.hibernate</groupId>
       <artifactId>hibernate-entitymanager</artifactId>
-      <version>3.6.10.Final</version>
+      <version>${version.frk.hibernate}</version>
     </dependency>
     <dependency>
       <groupId>org.hibernate</groupId>
       <artifactId>hibernate-validator</artifactId>
-      <version>3.1.0.GA</version>
+      <version>${version.frk.hibernate}</version>
     </dependency>
     <dependency>
       <groupId>javax.persistence</groupId>
@@ -138,11 +138,12 @@
       <artifactId>commons-collections</artifactId>
       <version>3.1</version>
     </dependency>
-    <dependency>
+ <!--   <dependency>
       <groupId>org.hibernate</groupId>
       <artifactId>hibernate</artifactId>
-      <version>3.3.2</version>
-    </dependency>
+            <version>${version.frk.hibernate}</version>
+
+    </dependency>-->
     <dependency>
       <groupId>javax.transaction</groupId>
       <artifactId>jta</artifactId>
