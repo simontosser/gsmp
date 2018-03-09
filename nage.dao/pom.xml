@@ -3,25 +3,6 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>fr.gsmp.plongee</groupId>
   <artifactId>nage.dao</artifactId>
-	<repositories>
-		<repository>
-			<id>kornog-repository</id>
-			<name>kornog Maven2 Repository</name>
-			<url>http://maven.kornog-computing.com/maven2/</url>
-		</repository>
-		<repository>
-			<id>kornog-release</id>
-			<name>kornog Maven2 Repository</name>
-			<url>http://maven.kornog-computing.com/release/</url>
-		</repository>
-		<repository>
-			<id>kornog-snapshot</id>
-			<name>kornog Maven2 Repository</name>
-			<url>http://maven.kornog-computing.com/snapshot</url>
-		</repository>
-                
-        </repositories>
-
       <scm>
         <connection>scm:svn:https://www.kornog-computing.com/svn/gsmp/trunk/nage.dao/</connection>
         <url>https://www.kornog-computing.com/svn/gsmp/trunk/nage.dao/</url>
