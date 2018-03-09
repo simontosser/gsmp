@@ -62,6 +62,10 @@
     <pack name="GSMP NAGE" required="yes">
       <description>The core files needed for the application</description>
       <fileset dir="lib" targetdir="${INSTALL_PATH}/lib/" override="true"/>
+      <file src="lib/nage.app-0.9.2-SNAPSHOT.jar" targetdir="${INSTALL_PATH}"/>
+      <file src="run.sh" targetdir="${INSTALL_PATH}"/>
+      <file src="run.bat" targetdir="${INSTALL_PATH}"/>
+      
     </pack>
   </packs>
 </izpack:installation>

@@ -143,6 +143,7 @@
 						<manifest>
 							<mainClass>fr.gsmp.plongee.nage.app.GsmpNage</mainClass>
 							<addClasspath>true</addClasspath>
+							<classpathPrefix>lib/</classpathPrefix>
 						</manifest>
 					</archive>
 				</configuration>
