@@ -6,29 +6,9 @@
   <version>0.9.2-SNAPSHOT</version>
   
 <properties>
-   <izpack.version>5.0.9</izpack.version>
+   <izpack.version>5.1.2</izpack.version>
    <izpack.staging>${project.build.directory}/staging</izpack.staging>
 </properties>
-  
-
-	<!--<repositories>
-		<repository>
-			<id>kornog-repository</id>
-			<name>kornog Maven2 Repository</name>
-			<url>http://maven.kornog-computing.com/maven2/</url>
-		</repository>
-		<repository>
-			<id>kornog-release</id>
-			<name>kornog Maven2 Repository</name>
-			<url>http://maven.kornog-computing.com/release/</url>
-		</repository>
-		<repository>
-			<id>kornog-snapshot</id>
-			<name>kornog Maven2 Repository</name>
-			<url>http://maven.kornog-computing.com/snapshot</url>
-		</repository>
-                
-        </repositories>-->
       <scm>
         <connection>scm:svn:https://www.kornog-computing.com/svn/gsmp/trunk/nage.app/</connection>
         <url>https://www.kornog-computing.com/svn/gsmp/trunk/nage.app/</url>
@@ -46,12 +26,25 @@
 	</distributionManagement>
 
   <dependencies>
+
+    <dependency>
+      <groupId>fr.gsmp.plongee</groupId>
+      <artifactId>nage.services</artifactId>
+      <version>0.9.2-SNAPSHOT</version>
+    </dependency>
     
     <dependency>
       <groupId>fr.gsmp.plongee</groupId>
       <artifactId>nage.app</artifactId>
       <version>0.9.2-SNAPSHOT</version>
-    </dependency>
+		 <scope>runtime</scope>
+     </dependency>
+    
+    <dependency>
+    <groupId>org.codehaus.izpack</groupId>
+    <artifactId>izpack-maven-plugin</artifactId>
+    <version>${izpack.version}</version>
+</dependency>
     
   </dependencies>
   <build>
@@ -63,6 +56,85 @@
           <target>1.8</target>
         </configuration>
       </plugin>
+      
+      
+      <plugin>
+    <artifactId>maven-antrun-plugin</artifactId>
+    <executions>
+       <execution>
+          <id>create-staging-area</id>
+          <phase>process-resources</phase>
+          <goals>
+             <goal>run</goal>
+          </goals>
+          <configuration>
+             <tasks>
+                <copy todir="${izpack.staging}">
+                   <fileset dir="${basedir}/src/main/izpack"/>
+                </copy>
+             </tasks>
+          </configuration>
+       </execution>
+    </executions>
+ </plugin>
+ 
+ <plugin>
+      <artifactId>maven-dependency-plugin</artifactId>
+      <configuration>
+        <excludeTransitive>false</excludeTransitive>
+        <stripVersion>true</stripVersion>
+        <overWriteReleases>true</overWriteReleases>
+        <overWriteSnapshots>true</overWriteSnapshots>
+        <overWriteIfNewer>true</overWriteIfNewer>
+        <excludeScope>system</excludeScope>
+      </configuration>
+      <executions>
+        <execution>
+          <!-- copy product jars to izpack staging lib -->
+          <id>copy-product-dependencies</id>
+          <phase>prepare-package</phase>
+          <goals>
+            <goal>copy-dependencies</goal>
+          </goals>
+          <configuration>
+            <outputDirectory>${izpack.staging}/lib</outputDirectory>
+            <excludeScope>system</excludeScope>
+            <!-- this excludes tools.jar, e.g. -->
+            <excludeArtifactIds>mycustompanels</excludeArtifactIds>
+            <excludeGroupIds>org.codehaus.izpack</excludeGroupIds>
+          </configuration>
+        </execution>
+        <execution>
+          <!-- copy izpack custom (custom panels, etc.) jars to izpack staging custom -->
+          <id>copy-izpack-dependencies</id>
+          <phase>prepare-package</phase>
+          <goals>
+            <goal>copy-dependencies</goal>
+          </goals>
+         
+        </execution>
+      </executions>
+    </plugin>
+ 
+ <plugin>
+   <groupId>org.codehaus.izpack</groupId>
+   <artifactId>izpack-maven-plugin</artifactId>
+   <version>${izpack.version}</version>
+   <executions>
+      <execution>
+         <phase>package</phase>
+         <goals><goal>izpack</goal></goals>
+         <configuration>
+            <!-- base for relative paths in izpack descriptor -->
+            <baseDir>${izpack.staging}</baseDir>
+            <installFile>${basedir}/src/main/izpack/install.xml</installFile>
+         </configuration>
+      </execution>
+   </executions>
+   <dependencies>
+   </dependencies>
+   </plugin>
+ 
      
     </plugins>
   </build>
