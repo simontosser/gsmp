@@ -6,11 +6,22 @@
 <info>
  <appname>GSMP NAGE</appname>
   <appversion>0.9.2</appversion>
+  <authors><author name="Simon TOSSER" email="simon@tosser.fr" /></authors>
 </info>
 
  <locale>
     <langpack iso3="fra"/>
   </locale>
+  
+  <variables>
+  <variable name="TargetPanel.dir.windows" value="C:/GSMP NAGE"/>
+</variables>
+  
+  <resources>
+    <res id="LicencePanel.licence_eng" src="resources/License_eng.txt" />
+    <res id="LicencePanel.licence_fra" src="resources/License_fra.txt" />
+    <res id="LicencePanel.licence" src="resources/License_eng.txt"/>
+</resources>
 
 <guiprefs width="600" height="480" resizable="no">
   <modifier key="useButtonIcons" value="no"/>
@@ -27,18 +38,30 @@
 </guiprefs>
 
   <panels>
+      <panel classname="LicencePanel" id="panel.license">
+      <configuration>
+        <param name="console-text-paging" value="true" />
+        <param name="console-text-wordwrap" value="false" />
+      </configuration>
+    </panel>
     <panel classname="TargetPanel"/>
     <panel classname="PacksPanel"/>
     <panel classname="InstallPanel"/>
+    <panel classname="ShortcutPanel" id="my_shortcutpanel"/>
     <panel classname="FinishPanel"/>
   </panels>
   
+  <variables>
+  <variable name="JDKPathPanel.minVersion" value="1.4.1" />
+  <variable name="JDKPathPanel.maxVersion" value="1.4.99" />
+  <variable name="JDKPathPanel.skipIfValid" value="yes" />
+</variables>
+  
   
     <packs>
-    <pack name="Core" required="yes">
+    <pack name="GSMP NAGE" required="yes">
       <description>The core files needed for the application</description>
-      <fileset dir="lib" targetdir="${INSTALL_PATH}" override="true"/>
-      <!-- <parsable targetfile="${INSTALL_PATH}/test.properties"/>-->
+      <fileset dir="lib" targetdir="${INSTALL_PATH}/lib/" override="true"/>
     </pack>
   </packs>
 </izpack:installation>

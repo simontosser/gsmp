@@ -44,18 +44,14 @@
     <dependency>
       <groupId>org.springframework</groupId>
       <artifactId>spring-core</artifactId>
-      <version>3.1.1.RELEASE</version>
+			<version>${version.frk.spring}</version>
     </dependency>
     <dependency>
       <groupId>org.springframework</groupId>
       <artifactId>spring-beans</artifactId>
-      <version>3.1.1.RELEASE</version>
+			<version>${version.frk.spring}</version>
     </dependency>
-    <dependency>
-      <groupId>org.springframework</groupId>
-      <artifactId>spring-asm</artifactId>
-      <version>3.1.1.RELEASE</version>
-    </dependency>
+
     <dependency>
       <groupId>commons-logging</groupId>
       <artifactId>commons-logging</artifactId>
@@ -69,17 +65,17 @@
     <dependency>
       <groupId>org.springframework</groupId>
       <artifactId>spring-context</artifactId>
-      <version>3.1.1.RELEASE</version>
+			<version>${version.frk.spring}</version>
     </dependency>
     <dependency>
       <groupId>org.springframework</groupId>
       <artifactId>spring-expression</artifactId>
-      <version>3.1.1.RELEASE</version>
+			<version>${version.frk.spring}</version>
     </dependency>
     <dependency>
       <groupId>org.springframework</groupId>
       <artifactId>spring-aop</artifactId>
-      <version>3.1.1.RELEASE</version>
+			<version>${version.frk.spring}</version>
     </dependency>
     <dependency>
       <groupId>aopalliance</groupId>
@@ -99,7 +95,7 @@
     <dependency>
       <groupId>org.springframework</groupId>
       <artifactId>spring-aspects</artifactId>
-      <version>3.1.1.RELEASE</version>
+			<version>${version.frk.spring}</version>
     </dependency>
     <dependency>
       <groupId>org.springframework</groupId>
@@ -109,7 +105,7 @@
     <dependency>
       <groupId>org.springframework</groupId>
       <artifactId>spring-instrument-tomcat</artifactId>
-      <version>3.1.1.RELEASE</version>
+			<version>${version.frk.spring}</version>
     </dependency>
     <dependency>
       <groupId>org.hibernate</groupId>
@@ -199,18 +195,18 @@
     <dependency>
       <groupId>org.springframework</groupId>
       <artifactId>spring-core</artifactId>
-      <version>3.1.1.RELEASE</version>
+			<version>${version.frk.spring}</version>
     </dependency>
     <dependency>
       <groupId>org.springframework</groupId>
       <artifactId>spring-beans</artifactId>
-      <version>3.1.1.RELEASE</version>
+			<version>${version.frk.spring}</version>
     </dependency>
-    <dependency>
-      <groupId>org.springframework</groupId>
-      <artifactId>spring-asm</artifactId>
-      <version>3.1.1.RELEASE</version>
-    </dependency>
+<!--     <dependency> -->
+<!--       <groupId>org.springframework</groupId> -->
+<!--       <artifactId>spring-asm</artifactId> -->
+<!--       <version>3.1.1.RELEASE</version> -->
+<!--     </dependency> -->
     <dependency>
       <groupId>commons-logging</groupId>
       <artifactId>commons-logging</artifactId>
@@ -224,17 +220,17 @@
     <dependency>
       <groupId>org.springframework</groupId>
       <artifactId>spring-context</artifactId>
-      <version>3.1.1.RELEASE</version>
+			<version>${version.frk.spring}</version>
     </dependency>
     <dependency>
       <groupId>org.springframework</groupId>
       <artifactId>spring-expression</artifactId>
-      <version>3.1.1.RELEASE</version>
+			<version>${version.frk.spring}</version>
     </dependency>
     <dependency>
       <groupId>org.springframework</groupId>
       <artifactId>spring-aop</artifactId>
-      <version>3.1.1.RELEASE</version>
+			<version>${version.frk.spring}</version>
     </dependency>
     <dependency>
       <groupId>aopalliance</groupId>
@@ -254,22 +250,22 @@
     <dependency>
       <groupId>org.springframework</groupId>
       <artifactId>spring-aspects</artifactId>
-      <version>3.1.1.RELEASE</version>
+			<version>${version.frk.spring}</version>
     </dependency>
     <dependency>
       <groupId>org.springframework</groupId>
       <artifactId>spring-instrument</artifactId>
-      <version>3.1.1.RELEASE</version>
+			<version>${version.frk.spring}</version>
     </dependency>
     <dependency>
       <groupId>org.springframework</groupId>
       <artifactId>spring-instrument-tomcat</artifactId>
-      <version>3.1.1.RELEASE</version>
+			<version>${version.frk.spring}</version>
     </dependency>
     <dependency>
     	<groupId>org.springframework</groupId>
     	<artifactId>spring-orm</artifactId>
-    	<version>3.1.1.RELEASE</version>
+			<version>${version.frk.spring}</version>
     </dependency>
 
  <dependency>
